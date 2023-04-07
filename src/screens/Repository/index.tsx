@@ -37,13 +37,7 @@ export function Repository() {
   const repository = findRepositoryById(repositoryId);
 
   async function handleIssueNavigation(issueUrl: string) {
-    const supported = await Linking.canOpenURL(issueUrl);
-
     await Linking.openURL(issueUrl);
-    if (supported) {
-    } else {
-      Alert.alert(`Não foi possível abrir essa URL: ${issueUrl}`);
-    }
   }
 
   return (
